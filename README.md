@@ -1,3 +1,3 @@
 # SMSTufani
 Türkiye için çalışan SMS Bomber.
-# Yapılan hiç bir şeyden sorumlud değilim.
+# Yapılan hiç bir şeyden sorumlu değilim.
