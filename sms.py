@@ -23,12 +23,12 @@ class SendSms():
             json={"mobile_number": self.phone, "token_type": "register_token"}
             r = requests.post(url, headers=headers, json=json, timeout=6)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! {self.phone} --> core.kahvedunyasi.com")
+                print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı!! {self.phone} --> core.kahvedunyasi.com")
                 self.adet += 1
             else:
                 raise
         except:    
-            print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! {self.phone} --> core.kahvedunyasi.com")
+            print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız!! {self.phone} --> core.kahvedunyasi.com")
         
      
     #wmf.com.tr
