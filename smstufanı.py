@@ -172,7 +172,7 @@ while 1:
     /  \\__$$ |$$ |$$$/ $$ |/  \\__$$ |   $$ |   $$ \\__$$ |$$ |     $$ |  $$ |$$ |$$$$ | _$$ |_ 
     $$    $$/ $$ | $/  $$ |$$    $$/    $$ |   $$    $$/ $$ |     $$ |  $$ |$$ | $$$ |/ $$   |
      $$$$$$/  $$/      $$/  $$$$$$/     $$/     $$$$$$/  $$/      $$/   $$/ $$/   $$/ $$$$$$/ 
-                                                                                           {Style.RESET_ALL}by {Fore.LIGHTRED_EX}tiktok.com/@unknown_napim\n
+                                                                                           {Style.RESET_ALL}{Fore.LIGHTRED_EX}tiktok.com/@unknown_napim\n
    """)
 
 
