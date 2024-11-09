@@ -11,20 +11,20 @@ def slow_print(text, delay=0.008, end='\n'):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
-    print(end, flush=True)  # Yeni satıra geç veya belirtilen end karakterini yaz
+    print(end, flush=True)  
 
 def slow_print_more(text, delay=0.03, end='\n'):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
-    print(end, flush=True)  # Yeni satıra geç veya belirtilen end karakterini yaz
+    print(end, flush=True) 
 
 
 def slow_print_more_more(text, delay=0.06, end='\n'):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
-    print(end, flush=True)  # Yeni satıra geç veya belirtilen end karakterini yaz
+    print(end, flush=True)  
 
 
 servisler_sms = []
@@ -35,20 +35,6 @@ for attribute in dir(SendSms):
             servisler_sms.append(attribute)
 
 
-print(Fore.LIGHTBLUE_EX + """
-© 2024 SMS Tufanı. Tüm Hakları Saklıdır.
-
-Bu yazılım "SMS Tufanı" adı altında geliştirilmiş olup, yalnızca eğitim ve siber güvenlik bilincini artırma amaçlı kullanılmak üzere tasarlanmıştır. Yazılımın ticari kullanım, kötüye kullanım veya herhangi bir yasadışı faaliyet için kullanılması yasaktır. Yazılımın kodu, tasarımı ve işleyişi üzerinde tüm haklar geliştiriciye aittir ve bu yazılımın herhangi bir kısmı, izin alınmaksızın kopyalanamaz, dağıtılamaz veya yeniden üretilemez.
-
-Yazılımın kullanımından doğabilecek yasal, teknik veya kişisel sorunlardan tamamen kullanıcı sorumludur ve geliştirici bu gibi durumlarda hiçbir sorumluluk kabul etmez. Yazılımın kullanımı sırasında ya da sonrasında meydana gelebilecek zararlardan geliştirici sorumlu tutulamaz.
-
-Bu yazılımı kullanarak, belirtilen koşulları kabul etmiş sayılırsınız.
-""")
-time.sleep(2)
-if os.name == 'nt':
-    os.system('cls')  # Windows için
-else:
-    os.system('clear')  # Unix tabanlı sistemler için
 
 print(Fore.LIGHTBLUE_EX + """
 LİSANS SÖZLEŞMESİ
@@ -63,27 +49,10 @@ Bu lisans, yazılımın etik ve yasal sınırlar içinde kullanımını zorunlu 
 """)
 time.sleep(2)
 if os.name == 'nt':
-    os.system('cls')  # Windows için
+    os.system('cls')  # Windows
 else:
-    os.system('clear')  # Unix tabanlı sistemler için
+    os.system('clear')  # Unix 
 
-
-print(Fore.LIGHTBLUE_EX + """
-MIT Lisansı
-
-İşbu belge ile, bu yazılımın bir kopyasına sahip olan herhangi bir kişiye, yazılımın sınırlama olmaksızın kullanımına, kopyalanmasına, değiştirilmesine, birleştirilmesine, yayımlanmasına, dağıtılmasına, alt lisans verilmesine ve/veya yazılımın kopyalarını satmasına, aşağıdaki koşullar altında izin verilmektedir:
-
-© 2024 SMS Tufanı. Tüm Hakları Saklıdır.
-
-Yukarıdaki telif hakkı bildirimi ve bu izin bildirimi, yazılımın tüm kopyalarına veya önemli bölümlerine dahil edilecektir.
-
-YAZILIM "OLDUĞU GİBİ", AÇIK YA DA ZIMNİ HERHANGİ BİR GARANTİ OLMAKSIZIN, PAZARLANABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL DURUMUNA YÖNELİK GARANTİLER DAHİL, ANCAK BUNLARLA SINIRLI OLMAYAN GARANTİLER OLMADAN SAĞLANMAKTADIR. HİÇBİR DURUMDA YAZARLAR VEYA TELİF HAKKI SAHİPLERİ, YAZILIMDAN KAYNAKLANAN YA DA YAZILIMIN KULLANIMI VEYA DİĞER İŞLEMLERLE İLGİLİ HERHANGİ BİR TALEP, ZARAR VEYA DİĞER YÜKÜMLÜLÜKLERDEN SORUMLU TUTULAMAZ.
-""")
-time.sleep(2)
-if os.name == 'nt':
-    os.system('cls')  # Windows için
-else:
-    os.system('clear')  # Unix tabanlı sistemler için
 
 print(Fore.LIGHTBLUE_EX + """
 SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
@@ -101,9 +70,9 @@ Geliştirici, yazılımın herhangi bir güncellemesini veya desteğini sağlama
 """)
 time.sleep(2)
 if os.name == 'nt':
-    os.system('cls')  # Windows için
+    os.system('cls')  # Windows
 else:
-    os.system('clear')  # Unix tabanlı sistemler için
+    os.system('clear')  # Unix
 
     
 print(Fore.LIGHTBLUE_EX + """
@@ -120,9 +89,9 @@ Bu EULA, yazılımı kullanmaya başladığınız andan itibaren geçerli olup, 
 """)
 time.sleep(2)
 if os.name == 'nt':
-    os.system('cls')  # Windows için
+    os.system('cls')  # Windows
 else:
-    os.system('clear')  # Unix tabanlı sistemler için
+    os.system('clear')  # Unix 
 
 
 
@@ -142,9 +111,9 @@ Bu yazılımı kullanarak, belirtilen tüm koşulları kabul etmiş sayılırsı
 """)
 time.sleep(3)
 if os.name == 'nt':
-    os.system('cls')  # Windows için
+    os.system('cls')  # Windows
 else:
-    os.system('clear')  # Unix tabanlı sistemler için
+    os.system('clear')  # Unix 
 
 print(Fore.LIGHTBLUE_EX + """
 UYARI\n
@@ -154,9 +123,9 @@ Bu kodda kullanılan markaları kodu inceleyerek görebilirsiniz. (Satır 206-24
 """)
 time.sleep(10)
 if os.name == 'nt':
-    os.system('cls')  # Windows için
+    os.system('cls')  # Windows
 else:
-    os.system('clear')  # Unix tabanlı sistemler için
+    os.system('clear')  # Unix 
 
 
 
