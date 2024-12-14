@@ -19,8 +19,8 @@ Türkiye için çalışan SMS Bomber.
 
 # Gelecek Güncelleme
 
- Multi-Numara Saldırısı [BETA]
-   Ekstra Numaralar:
+- Multi-Numara Saldırısı [BETA]
+-  Ekstra Numaralar:
 - Akasya  
 - Akbatı  
 - Ayyıldız  
