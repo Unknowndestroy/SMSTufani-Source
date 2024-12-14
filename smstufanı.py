@@ -237,11 +237,11 @@ while 1:
             sleep(3)
             continue
 
-        slow_print(Fore.LIGHTYELLOW_EX + "Telefon numarasını başında '+90' olmadan yazınız (Birden çoksa 'enter' tuşuna basınız): ", end="")
+        slow_print(Fore.LIGHTYELLOW_EX + "Telefon numarasını başında '+90' olmadan yazınız (Birden çoksa 'Multi' yazınız.): ", end="")
         tel_no = input()
         tel_liste = []
 
-        if tel_no == "":
+        if tel_no == "Multi":
             system("cls||clear")
             slow_print(Fore.LIGHTYELLOW_EX + "Telefon numaralarının kayıtlı olduğu dosyanın dizinini yazınız: ", end="")
             dizin = input()
