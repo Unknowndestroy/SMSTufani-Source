@@ -56,3 +56,6 @@ Türkiye için çalışan SMS Bomber.
 - Yapp  
 - Yılmaz Ticaret  
 - Yuffie  
+
+
+### Planlanan Çıkış Tarihi: 1 Ocak 2024
