@@ -3,17 +3,21 @@ Türkiye için çalışan SMS Bomber.
 # TERMUX DESTEKLİ 
 - (Daha önce kurduysanız öncekini silip bunu yükleyin[Eğer güncellendiyse])
 
+# Son Güncelleme Tarihi: 17 Aralık
+
 # Son Güncelleme
 - Ctrl + R ile uyarıları geçme eklendi.
 - Teyit sorusu eklendi.
 - E-Mail sistemi geliştirildi.
-   SMS Gönderimi Durdurma eklendi. 
+- SMS Gönderimi Durdurma eklendi. 
+- Ratelimit koruması biraz iyileştirildi.
 
 
 
 # Hata Düzeltmeleri
 
 - Ctrl + Z'ye basınca durmaması hatası düzeltildi.
+- Logo Ortalandı
 - Sistemin animasyon döngüsüne girmesi engellendi.
 - Daha eklenmemiş ve beta sürümünde olan Multi-Saldırı'ya kendi kendine girişi engellendi.
 
