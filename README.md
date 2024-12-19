@@ -21,7 +21,7 @@ Türkiye için çalışan SMS Bomber.
 - Sistemin animasyon döngüsüne girmesi engellendi.
 - Daha eklenmemiş ve beta sürümünde olan Multi-Saldırı'ya kendi kendine girişi engellendi.
 
-# Gelecek Güncelleme
+# Gelecek Güncelleme - SMSTufanı 2.0
 
 - Multi-Numara Saldırısı [BETA]
 -  Ekstra Numaralar:
