@@ -15,7 +15,7 @@ Bu araç özellikle Termux destekli cihazlarda çalışacak şekilde optimize ed
 - Termux uygulaması 📱  
 - İnternet bağlantısı 🌐  
 
-### 🛠️ Kurulum  
+### 🛠️ Termux Kurulum  
 1. Termux'u Google Play Store veya F-Droid üzerinden indirin.  
 2. Gerekli bağımlılıkları yükleyin:  
    ```bash
@@ -35,6 +35,25 @@ cd SMSTufani
 ```bash
 pip install requests colorama tqdm
 ```
+
+### 🛠️ Kurulum  
+1. Gerekli bağımlılıkları yükleyin:  
+   ```bash
+   pip install --upgrade pip  
+
+3. SMSTufanı deposunu klonlayın.
+```bash
+   git clone https://github.com/Unknowndestroy/SMSTufani.git  
+```
+4. Depoya gidin.
+```bash
+cd SMSTufani  
+```
+5. Gerekli Python paketlerini yükleyin.
+```bash
+pip install requests colorama tqdm
+```
+
 ### 🎯 Kullanım
 
 1. Uygulamayı başlatmak için:
