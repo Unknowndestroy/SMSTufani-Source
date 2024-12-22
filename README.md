@@ -69,6 +69,29 @@ Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENS
 ### 📩 İletişim
 Herhangi bir sorun veya öneri için: unknowndestroyerbusiness@gmail.com
 
+Son Güncelleme Tarihi: 17 Aralık
+Son Güncelleme
+- Ctrl + R ile uyarıları geçme eklendi.
+- Teyit sorusu eklendi.
+- E-Mail sistemi geliştirildi.
+- SMS Gönderimi Durdurma eklendi. 
+- Ratelimit koruması biraz iyileştirildi.
+
+ Hata Düzeltmeleri
+
+- Ctrl + Z'ye basınca durmaması hatası düzeltildi.
+- Logo Ortalandı
+- Sistemin animasyon döngüsüne girmesi engellendi.
+- Daha eklenmemiş ve beta sürümünde olan Multi-Saldırı'ya kendi kendine girişi engellendi.
+
+### Gelecek Güncelleme - SMSTufanı 2.0
+
+- Multi-Numara Saldırısı [BETA]
+- Marka eklendi.
+- Eklenen markalar: Hızlıeczane, Ayyıldız, KimGb, Macro, WMF, Akasya, Yapp, ToptanTeslim, Naosstars, Taşdelen, Taksim, Qumpara, Üçdörtbeş, Happy, Koton, Komagene, Tazi, TıklaGelsin, Starbucks, Paybol, Yuffie, Uysal, Joker, Metro, İpragaz, Migros, Taşımaçım, Kahve Dünyası, Akbatı, Porty, Pidem, Suiste, KuryemGelsin, Clickme, Yılmaz Ticaret
+
+ ### Planlanan Çıkış Tarihi: 1 Ocak 2025
+
 ## 🇬🇧 English
 **SMSTufanı** is a tool developed to perform SMS sending quickly and efficiently.
 
@@ -156,27 +179,4 @@ Last Update:
  - Added companies: Hızlıeczane, Ayyıldız, KimGb, Macro, WMF, Akasya, Yapp, ToptanTeslim, Naosstars, Taşdelen, Taksim, Qumpara, Üçdörtbeş, Happy, Koton, Komagene, Tazi, TıklaGelsin, Starbucks, Paybol, Yuffie, Uysal, Joker, Metro, İpragaz, Migros, Taşımaçım, Kahve Dünyası, Akbatı, Porty, Pidem, Suiste, KuryemGelsin, Clickme, Yılmaz Ticaret
 ### Planned Update Date: January 1 2025
 
-Son Güncelleme Tarihi: 17 Aralık
-Son Güncelleme
-- Ctrl + R ile uyarıları geçme eklendi.
-- Teyit sorusu eklendi.
-- E-Mail sistemi geliştirildi.
-- SMS Gönderimi Durdurma eklendi. 
-- Ratelimit koruması biraz iyileştirildi.
 
-
-
- Hata Düzeltmeleri
-
-- Ctrl + Z'ye basınca durmaması hatası düzeltildi.
-- Logo Ortalandı
-- Sistemin animasyon döngüsüne girmesi engellendi.
-- Daha eklenmemiş ve beta sürümünde olan Multi-Saldırı'ya kendi kendine girişi engellendi.
-
-### Gelecek Güncelleme - SMSTufanı 2.0
-
-- Multi-Numara Saldırısı [BETA]
-- Marka eklendi.
-- Eklenen markalar: Hızlıeczane, Ayyıldız, KimGb, Macro, WMF, Akasya, Yapp, ToptanTeslim, Naosstars, Taşdelen, Taksim, Qumpara, Üçdörtbeş, Happy, Koton, Komagene, Tazi, TıklaGelsin, Starbucks, Paybol, Yuffie, Uysal, Joker, Metro, İpragaz, Migros, Taşımaçım, Kahve Dünyası, Akbatı, Porty, Pidem, Suiste, KuryemGelsin, Clickme, Yılmaz Ticaret
-
- ### Planlanan Çıkış Tarihi: 1 Ocak 2025
