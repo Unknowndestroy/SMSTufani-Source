@@ -3,7 +3,6 @@
 ## 🇹🇷 Türkçe  
 ### Açıklama  
 **SMSTufanı**, SMS gönderimini hızlı ve verimli bir şekilde gerçekleştirmek için geliştirilmiş bir araçtır.  
-Bu araç özellikle Termux destekli cihazlarda çalışacak şekilde optimize edilmiştir.  
 
 ### 🚀 Özellikler  
 - Termux desteği 🤖  
@@ -61,14 +60,104 @@ python smstufani.py
 ```
 2. Gönderim bilgilerini girerek SMS'lerinizi gönderin.
 
-# SMSTufani
-Türkiye için çalışan SMS Bomber.
-# TERMUX DESTEKLİ 
-- (Daha önce kurduysanız öncekini silip bunu yükleyin[Eğer güncellendiyse])
+### 🤝 Katkı
+Depoyu çatallamaktan ve geliştirmeler için pull request göndermekten çekinmeyin!
 
-# Son Güncelleme Tarihi: 17 Aralık
+### 📜 Lisans
+Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına göz atabilirsiniz.
 
-# Son Güncelleme
+### 📩 İletişim
+Herhangi bir sorun veya öneri için: unknowndestroyerbusiness@gmail.com
+
+## 🇬🇧 English
+**SMSTufanı** is a tool developed to perform SMS sending quickly and efficiently.
+
+### 🚀 Features
+- Termux support 🤖
+- Fast and reliable ⚡
+- Bulk SMS sending 📤
+### 💻 Requirements
+- Python 3.8 or higher 🐍
+- Internet connection 🌐
+
+### 🛠️ Termux Installation
+1. Download Termux from Google Play Store or F-Droid.
+2. Install the necessary dependencies:
+```bash
+pkg update && pkg upgrade  
+pkg install python git  
+pip install --upgrade pip  
+```
+3. Clone the SMSTufanı repository:
+```bash
+git clone https://github.com/Unknowndestroy/SMSTufani.git  
+```
+4. Navigate to the repository:
+```bash
+cd SMSTufani  
+``` 
+5. Install the required Python packages:
+```bash
+pip install requests colorama tqdm
+```
+
+### 🛠️ Windows - PIP Installation
+1. Install the necessary dependencies:
+```bash
+pip install --upgrade pip  
+```
+2. Clone the SMSTufanı repository:
+```bash
+git clone https://github.com/Unknowndestroy/SMSTufani.git  
+```
+3. Navigate to the repository:
+```bash
+cd SMSTufani  
+``` 
+4. Install the required Python packages:
+```bash
+pip install requests colorama tqdm
+```
+
+
+###🎯 Usage
+1. To start the application: 
+```bash
+python smstufani.py  
+```
+2. Enter the sending details to send your SMS.
+
+### 🤝 Contribution
+Feel free to fork the repository and create pull requests for improvements!
+
+ ### 📜 License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+### 📩 Contact
+For any issues or suggestions: unknowndestroyerbusiness@gmail.com
+
+Last Update Data: 17 December 2024
+
+Last Update:
+- Ctrl + R added for skipping the agreements at the start
+- Confirmation question added
+- E-Mail system upgraded
+- SMS Attack stop added
+- Ratelimit protection made better
+    Error fixes:
+- Not stopping at the Ctrl + Z solved
+- Logo centered
+- Animation loop fixed
+- The system that on beta multi-attack loop fixed. 
+
+### Incoming Update - SMSTufani 2.0
+- Multi Number Attack [BETA]
+- Added more companies.
+ - Added companies: Hızlıeczane, Ayyıldız, KimGb, Macro, WMF, Akasya, Yapp, ToptanTeslim, Naosstars, Taşdelen, Taksim, Qumpara, Üçdörtbeş, Happy, Koton, Komagene, Tazi, TıklaGelsin, Starbucks, Paybol, Yuffie, Uysal, Joker, Metro, İpragaz, Migros, Taşımaçım, Kahve Dünyası, Akbatı, Porty, Pidem, Suiste, KuryemGelsin, Clickme, Yılmaz Ticaret
+### Planned Update Date: January 1 2025
+
+Son Güncelleme Tarihi: 17 Aralık
+Son Güncelleme
 - Ctrl + R ile uyarıları geçme eklendi.
 - Teyit sorusu eklendi.
 - E-Mail sistemi geliştirildi.
@@ -77,52 +166,17 @@ Türkiye için çalışan SMS Bomber.
 
 
 
-# Hata Düzeltmeleri
+ Hata Düzeltmeleri
 
 - Ctrl + Z'ye basınca durmaması hatası düzeltildi.
 - Logo Ortalandı
 - Sistemin animasyon döngüsüne girmesi engellendi.
 - Daha eklenmemiş ve beta sürümünde olan Multi-Saldırı'ya kendi kendine girişi engellendi.
 
-# Gelecek Güncelleme - SMSTufanı 2.0
+### Gelecek Güncelleme - SMSTufanı 2.0
 
 - Multi-Numara Saldırısı [BETA]
--  Ekstra Numaralar:
-- Akasya  
-- Akbatı  
-- Ayyıldız  
-- Clickme  
-- Happy  
-- Hızlıeczane  
-- İpragaz  
-- Joker  
-- Kahve Dünyası  
-- KimGb  
-- Komagene  
-- Koton  
-- KuryemGelsin  
-- Macro  
-- Metro  
-- Migros  
-- Naosstars  
-- Paybol  
-- Pidem  
-- Porty  
-- Qumpara  
-- Starbucks  
-- Suiste  
-- Taksim  
-- Taşdelen  
-- Taşımaçım  
-- Tazi  
-- TıklaGelsin  
-- ToptanTeslim  
-- Üçdörtbeş  
-- Uysal  
-- WMF  
-- Yapp  
-- Yılmaz Ticaret  
-- Yuffie  
+- Marka eklendi.
+- Eklenen markalar: Hızlıeczane, Ayyıldız, KimGb, Macro, WMF, Akasya, Yapp, ToptanTeslim, Naosstars, Taşdelen, Taksim, Qumpara, Üçdörtbeş, Happy, Koton, Komagene, Tazi, TıklaGelsin, Starbucks, Paybol, Yuffie, Uysal, Joker, Metro, İpragaz, Migros, Taşımaçım, Kahve Dünyası, Akbatı, Porty, Pidem, Suiste, KuryemGelsin, Clickme, Yılmaz Ticaret
 
-
-### Planlanan Çıkış Tarihi: 1 Ocak 2024
+ ### Planlanan Çıkış Tarihi: 1 Ocak 2025
