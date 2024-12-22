@@ -36,7 +36,7 @@ cd SMSTufani
 pip install requests colorama tqdm
 ```
 
-### 🛠️ Kurulum  
+### 🛠️ Windows - PIP Kurulum  
 1. Gerekli bağımlılıkları yükleyin:  
    ```bash
    pip install --upgrade pip  
