@@ -1,3 +1,48 @@
+# 📱 SMSTufanı  
+
+## 🇹🇷 Türkçe  
+### Açıklama  
+**SMSTufanı**, SMS gönderimini hızlı ve verimli bir şekilde gerçekleştirmek için geliştirilmiş bir araçtır.  
+Bu araç özellikle Termux destekli cihazlarda çalışacak şekilde optimize edilmiştir.  
+
+### 🚀 Özellikler  
+- Termux desteği 🤖  
+- Hızlı ve güvenilir ⚡  
+- Çoklu SMS gönderimi 📤  
+
+### 💻 Gereksinimler  
+- Python 3.8 veya üstü 🐍  
+- Termux uygulaması 📱  
+- İnternet bağlantısı 🌐  
+
+### 🛠️ Kurulum  
+1. Termux'u Google Play Store veya F-Droid üzerinden indirin.  
+2. Gerekli bağımlılıkları yükleyin:  
+   ```bash
+   pkg update && pkg upgrade  
+   pkg install python git  
+   pip install --upgrade pip  
+
+3. SMSTufanı deposunu klonlayın.
+```bash
+   git clone https://github.com/Unknowndestroy/SMSTufani.git  
+```
+4. Depoya gidin.
+```bash
+cd SMSTufani  
+```
+5. Gerekli Python paketlerini yükleyin.
+```bash
+pip install requests colorama tqdm
+```
+### 🎯 Kullanım
+
+1. Uygulamayı başlatmak için:
+```bash
+python smstufani.py  
+```
+2. Gönderim bilgilerini girerek SMS'lerinizi gönderin.
+
 # SMSTufani
 Türkiye için çalışan SMS Bomber.
 # TERMUX DESTEKLİ 
