@@ -12,7 +12,6 @@ Bu araç özellikle Termux destekli cihazlarda çalışacak şekilde optimize ed
 
 ### 💻 Gereksinimler  
 - Python 3.8 veya üstü 🐍  
-- Termux uygulaması 📱  
 - İnternet bağlantısı 🌐  
 
 ### 🛠️ Termux Kurulum  
