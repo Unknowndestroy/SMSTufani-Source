@@ -143,7 +143,7 @@ pip install requests colorama tqdm
 ```
 
 
-###🎯 Usage
+### 🎯 Usage
 1. To start the application: 
 ```bash
 python smstufani.py  
