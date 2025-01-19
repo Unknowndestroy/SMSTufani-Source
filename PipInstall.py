@@ -31,4 +31,4 @@ def clear_redundant_paths():
 if __name__ == "__main__":
     add_python_and_pip_to_path()
     clear_redundant_paths()
-    print("Python ve Pip PATH'e eklendi ve tekrar eden dizinler temizlendi.")
+    print("Python and Pip added to PATH")
