@@ -94,6 +94,26 @@ echo SendSms başarıyla indirildi.
 echo sms indiriliyor...
 echo sms başarıyla indirildi.
 
-
-
 title Paket Yükleme Tamamlandı!
+title Program başlatılıyor.
+cls
+echo requests indiriliyor...
+echo requests başarıyla indirildi.
+echo colorama indiriliyor...
+echo colorama başarıyla indirildi.
+echo six indiriliyor...
+echo six başarıyla indirildi.
+echo urllib3 indiriliyor...
+echo urllib3 başarıyla indirildi.
+echo futures indiriliyor...
+echo futures başarıyla indirildi.
+echo SendSms indiriliyor...
+echo SendSms başarıyla indirildi.
+echo sms indiriliyor...
+echo sms başarıyla indirildi.
+echo ___________________________________
+echo Program başlatılıyor.
+echo __________________________________
+timeout 2
+start main.pyw
+exit
