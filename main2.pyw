@@ -1,0 +1,289 @@
+import tkinter as tk
+from tkinter import ttk, messagebox
+import time
+import subprocess
+import os
+import webbrowser
+from math import sin, cos, pi
+import colorsys
+
+class ModernGUI:
+    def __init__(self):
+        self.animation_frame = 0
+        self.gradient_hue = 0
+        self.title_hue = 0
+        self.setup_main_window()
+        
+    def setup_main_window(self):
+        self.window = tk.Tk()
+        self.window.title("SMSTufanı 2.3 EX-BETA / Light mode may not work!")
+        self.window.geometry("500x400")
+        self.window.configure(bg='white')  # White background
+        
+        # Make window draggable from anywhere
+        self.window.bind("<Button-1>", self.start_move)
+        self.window.bind("<ButtonRelease-1>", self.stop_move)
+        self.window.bind("<B1-Motion>", self.do_move)
+        
+        # Center window on screen with blur effect
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        x = (screen_width - 500) // 2
+        y = (screen_height - 400) // 2
+        self.window.geometry(f"500x400+{x}+{y}")
+        
+        # Create canvas for custom drawing
+        self.canvas = tk.Canvas(self.window, bg='white', highlightthickness=0)  # White canvas background
+        self.canvas.pack(fill='both', expand=True)
+        
+        self.window.attributes("-alpha", 0)
+        self.create_main_widgets()
+        self.fade_in(self.window)
+        
+        # Start animation loop
+        self.animate_background()
+
+    def create_main_widgets(self):
+        # Create floating effect container
+        self.container = tk.Frame(self.canvas, bg='white', padx=30, pady=30)  # White container background
+        self.container.place(relx=0.5, rely=0.5, anchor='center')
+        
+        # Animated title with gradient effect
+        self.title_label = tk.Label(
+            self.container,
+            text="SMS Tufani",
+            font=('Helvetica', 24, 'bold'),
+            bg='white',  # Update title background to white
+            fg='#ffffff'
+        )
+        self.title_label.pack(pady=(0, 20))
+        self.animate_title_color()
+        
+        # Subtitle with typing animation
+        self.subtitle = tk.Label(
+            self.container,
+            text="",
+            font=('Helvetica', 12),
+            bg='white',  # Update subtitle background to white
+            fg='#cccccc'
+        )
+        self.subtitle.pack(pady=(0, 30))
+        self.type_text("Select Your Language / Dilinizi Seçin\n Note: Light mode configuration settings may not work\n because this mode is on Beta Version. \n Not: Açık modda Yapılandırma ayarları çalışmayabilir\n çünkü açık mod şu anda BETA sürümünde.", self.subtitle)
+        
+        # Modern button frame
+        button_frame = tk.Frame(self.container, bg='white')  # Button frame with white background
+        button_frame.pack(pady=20)
+        
+        # Enhanced buttons with pulse effect
+        self.create_modern_button(button_frame, "English", lambda: self.open_second_window("English"))
+        self.create_modern_button(button_frame, "Turkish", lambda: self.open_second_window("Turkish"))
+        
+        # Animated social link
+        self.social_frame = tk.Frame(self.container, bg='white')  # Social frame background
+        self.social_frame.pack(pady=20)
+        
+        self.tiktok_button = tk.Label(
+            self.social_frame,
+            text="Made by Unknown Destroyer / Unknown Destroyer tarafından yapıldı",
+            font=('Helvetica', 10),
+            fg='#4a9eff',
+            bg='white',  # White background for label
+            cursor='hand2'
+        )
+        self.tiktok_button.pack()
+        self.tiktok_button.bind('<Button-1>', lambda e: webbrowser.open('https://tiktok.com/@unknown_napim'))
+        self.tiktok_button.bind('<Enter>', self.on_social_hover)
+        self.tiktok_button.bind('<Leave>', self.on_social_leave)
+        
+        # Version with glow effect
+        self.version_label = tk.Label(
+            self.container,
+            text="v2.3 EX - Beta",
+            font=('Helvetica', 8),
+            bg='white',  # Update background to white
+            fg='#666666'
+        )
+        self.version_label.pack(pady=(20, 0))
+        
+        # Start floating animation
+        self.float_widgets()
+
+    def create_modern_button(self, parent, text, command):
+        frame = tk.Frame(parent, bg='white')  # Button container with white background
+        frame.pack(pady=5)
+        
+        btn = tk.Label(
+            frame,
+            text=text,
+            font=('Helvetica', 12),
+            bg='#4a9eff',
+            fg='white',
+            padx=30,
+            pady=10,
+            cursor='hand2'
+        )
+        btn.pack()
+        
+        # Create hover and click effects
+        def on_enter(e):
+            btn.configure(bg='#3a8eff')
+            self.pulse_animation(btn)
+            
+        def on_leave(e):
+            btn.configure(bg='#4a9eff')
+            
+        def on_click(e):
+            btn.configure(bg='#2a7eff')
+            self.window.after(100, command)
+        
+        btn.bind('<Enter>', on_enter)
+        btn.bind('<Leave>', on_leave)
+        btn.bind('<Button-1>', on_click)
+        
+        return btn
+
+    def type_text(self, text, label, index=0):
+        if index < len(text):
+            label.config(text=text[:index + 1])
+            self.window.after(50, lambda: self.type_text(text, label, index + 1))
+
+    def float_widgets(self):
+        self.animation_frame += 0.05
+        offset = sin(self.animation_frame) * 3
+        self.container.place_configure(rely=0.5 + offset/100)
+        self.window.after(50, self.float_widgets)
+
+    def animate_background(self):
+        self.gradient_hue = (self.gradient_hue + 0.001) % 1.0
+        color = self.get_gradient_color(self.gradient_hue)
+        self.canvas.configure(bg='white')  # Keep background white
+        self.window.after(50, self.animate_background)
+
+    def animate_title_color(self):
+        self.title_hue = (self.title_hue + 0.005) % 1.0
+        rgb = colorsys.hsv_to_rgb(self.title_hue, 0.7, 1.0)
+        color = f'#{int(rgb[0]*255):02x}{int(rgb[1]*255):02x}{int(rgb[2]*255):02x}'
+        self.title_label.configure(fg=color)
+        self.window.after(50, self.animate_title_color)
+
+    def get_gradient_color(self, hue):
+        rgb = colorsys.hsv_to_rgb(hue, 0.1, 0.15)
+        return f'#{int(rgb[0]*255):02x}{int(rgb[1]*255):02x}{int(rgb[2]*255):02x}'
+
+    def pulse_animation(self, widget, size=1.0, growing=True):
+        if not hasattr(widget, '_pulse_active'):
+            widget._pulse_active = True
+            if growing and size < 1.1:
+                size += 0.01
+                widget.configure(font=('Helvetica', int(12 * size)))
+                self.window.after(20, lambda: self.pulse_animation(widget, size, size < 1.1))
+            elif not growing and size > 1.0:
+                size -= 0.01
+                widget.configure(font=('Helvetica', int(12 * size)))
+                self.window.after(20, lambda: self.pulse_animation(widget, size, False))
+            else:
+                widget._pulse_active = False
+                widget.configure(font=('Helvetica', 12))
+
+    def on_social_hover(self, event):
+        self.tiktok_button.configure(fg='#5aafff')
+        self.pulse_animation(self.tiktok_button)
+
+    def on_social_leave(self, event):
+        self.tiktok_button.configure(fg='#4a9eff')
+
+    def start_move(self, event):
+        self.x = event.x
+        self.y = event.y
+
+    def stop_move(self, event):
+        self.x = None
+        self.y = None
+
+    def do_move(self, event):
+        deltax = event.x - self.x
+        deltay = event.y - self.y
+        x = self.window.winfo_x() + deltax
+        y = self.window.winfo_y() + deltay
+        self.window.geometry(f"+{x}+{y}")
+
+    def open_second_window(self, language):
+        self.fade_out(self.window)
+        self.window.withdraw()
+        
+        config_window = ConfigWindow(language, self)
+        config_window.run()
+
+    def fade_in(self, window):
+        for i in range(0, 21):
+            window.attributes("-alpha", i / 20)
+            window.update()
+            time.sleep(0.02)
+
+    def fade_out(self, window):
+        for i in range(20, -1, -1):
+            window.attributes("-alpha", i / 20)
+            window.update()
+            time.sleep(0.02)
+
+    def run(self):
+        self.window.mainloop()
+
+class ConfigWindow:
+    def __init__(self, language, parent):
+        self.language = language
+        self.parent = parent
+        self.setup_window()
+        
+    def setup_window(self):
+        self.window = tk.Tk()
+        self.window.title("Configuration")
+        self.window.geometry("600x500")
+        self.window.configure(bg='white')  # White background
+        
+        # Center window
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        x = (screen_width - 600) // 2
+        y = (screen_height - 500) // 2
+        self.window.geometry(f"600x500+{x}+{y}")
+        
+        self.create_widgets()
+        self.window.attributes("-alpha", 0)
+        self.fade_in()
+        
+    def create_widgets(self):
+        # Main container
+        container = tk.Frame(self.window, bg='white', padx=40, pady=40)  # White container
+        container.place(relx=0.5, rely=0.5, anchor='center')
+        
+        # Title with animation
+        title = tk.Label(
+            container,
+            text="Configuration Settings" if self.language == "English" else "Yapılandırma Ayarları",
+            font=('Helvetica', 20, 'bold'),
+            bg='white',  # White background
+            fg='black'
+        )
+        title.pack(pady=(0, 30))
+        
+        # Add other widgets with white background where necessary.
+
+    def fade_in(self):
+        for i in range(0, 21):
+            self.window.attributes("-alpha", i / 20)
+            self.window.update()
+            time.sleep(0.02)
+
+    def fade_out(self):
+        for i in range(20, -1, -1):
+            self.window.attributes("-alpha", i / 20)
+            self.window.update()
+            time.sleep(0.02)
+
+    def run(self):
+        self.window.mainloop()
+
+if __name__ == "__main__":
+    app = ModernGUI()
+    app.run()
