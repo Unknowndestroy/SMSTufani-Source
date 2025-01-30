@@ -115,5 +115,11 @@ echo ___________________________________
 echo Program başlatılıyor.
 echo __________________________________
 timeout 2
+start exit
+start exit
+start exit
+start exit
+start exit
+start exit
 start main.pyw
 exit
