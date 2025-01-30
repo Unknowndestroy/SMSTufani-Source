@@ -5,7 +5,7 @@ import os
 class ThemeSelectorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("SMSTufanı 2.3 EX-BETA / WARNING: Light mode may not work!")
+        self.root.title("SMSTufanı 2.3 PE-DEMO / WARNING: Light mode may not work!")
         self.root.geometry("600x300")
         self.root.resizable(False, False)
 
