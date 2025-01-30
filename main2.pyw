@@ -16,7 +16,7 @@ class ModernGUI:
         
     def setup_main_window(self):
         self.window = tk.Tk()
-        self.window.title("SMSTufanı 2.3 EX-BETA / Light mode may not work!")
+        self.window.title("SMSTufanı 2.3 PE-DEMO / Light mode may not work!")
         self.window.geometry("500x400")
         self.window.configure(bg='white')  # White background
         
@@ -98,7 +98,7 @@ class ModernGUI:
         # Version with glow effect
         self.version_label = tk.Label(
             self.container,
-            text="v2.3 EX - Beta",
+            text="v2.3 PE - Demo",
             font=('Helvetica', 8),
             bg='white',  # Update background to white
             fg='#666666'
