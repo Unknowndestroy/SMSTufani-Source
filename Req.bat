@@ -3,19 +3,19 @@ setlocal enabledelayedexpansion
 
 
 title Paket Yükleniyor...
-title Yüklenen Paket: requests
+title Yuklenen Paket: requests
 pip install requests
-title Yüklenen Paket: colorama / Son Yüklenen Paket: requests
+title Yuklenen Paket: colorama / Son Yuklenen Paket: requests
 pip install colorama
-title Yüklenen Paket: six / Son Yüklenen Paket: colorama
+title Yuklenen Paket: six / Son Yuklenen Paket: colorama
 pip install six
-title Yüklenen Paket: urllib3 / Son Yüklenen Paket: six
+title Yuklenen Paket: urllib3 / Son Yuklenen Paket: six
 pip install urllib3
-title Yüklenen Paket: futures / Son Yüklenen Paket: urllib3
+title Yuklenen Paket: futures / Son Yuklenen Paket: urllib3
 pip install futures
-title Yüklenen Paket: SendSms / Son Yüklenen Paket: futures
+title Yuklenen Paket: SendSms / Son Yuklenen Paket: futures
 pip install SendSms
-title Yüklenen Paket: sms / Son Yüklenen Paket: SendSms
+title Yuklenen Paket: sms / Son Yuklenen Paket: SendSms
 pip install sms
 
 
